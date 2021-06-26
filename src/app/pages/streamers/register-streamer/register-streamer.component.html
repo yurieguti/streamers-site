@@ -1,0 +1,49 @@
+<form [formGroup]="formStreamer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="nomeStreamer" class="form-label">Nome Streamer</label>
+                <input type="input" formControlName="nomeStreamer" class="form-control" id="nomeStreamer" placeholder="Insira o nome do Streamer">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="plataformaStreaming" class="form-label">Plataforma de Transmissão</label>
+            <select class="form-select" formControlName="plataformaStreaming" id="plataformaStreaming">
+                <option value="" selected>Selecione uma Plataforma</option>
+                <option value="Twich">Twitch</option>
+                <option value="Facebook Gamming">Facebook Gamming</option>
+                <option value="Steam">Steam</option>
+                <option value="Booyah">Booyah</option>
+                <option value="NimoTV">NimoTV</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="mb-3">
+                <label for="tipoJogo" class="form-label">Tipo de Jogo</label>
+                <select class="form-select" formControlName="tipoJogo" id="tipoJogo">
+
+                    <option selected>Selecione um Gênero de jogo</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="RPG">RPG</option>
+                    <option value="MMO">MMO</option>
+                    <option value="Just Chatting">Just Chatting</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="mb-3">
+                <label for="quantidadeSeguidores" class="form-label">Nº Seguidores</label>
+                <input type="input" class="form-control" formControlName="quantidadeSeguidores" id="quantidadeSeguidores" placeholder="">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-primary" (click)="onClickSave()">Cadastrar streamer</button>
+            <button class="btn btn-secondary mairgin-left-buttons" (click)="onClickBack()">Voltar</button>
+        </div>
+    </div>
+</form>    
