@@ -6,10 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { StreamerRouter } from './streamers.router';
 import { StreamerService } from './streamer.service';
+import { ListStreamerResolve } from './list-streamer/list.streamer.resolve';
+import { ListStreamerComponent } from './list-streamer/list-streamer.component';
+import { StreamerUpdateResolve } from './register-streamer/streamer-update.resolve';
 import { RegisterStreamerComponent } from './register-streamer/register-streamer.component';
 
 @NgModule({
   declarations: [
+    ListStreamerComponent,
     RegisterStreamerComponent
   ],
   imports: [
@@ -19,7 +23,9 @@ import { RegisterStreamerComponent } from './register-streamer/register-streamer
     RouterModule.forChild(StreamerRouter)
   ],
   providers: [
-    StreamerService
+    StreamerService,
+    ListStreamerResolve, 
+    StreamerUpdateResolve
   ]
 })
 export class StreamersModule { }

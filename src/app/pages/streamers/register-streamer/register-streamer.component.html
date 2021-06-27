@@ -42,7 +42,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <button class="btn btn-primary" (click)="onClickSave()">Cadastrar streamer</button>
+            <button class="btn btn-primary" (click)="onClickSave()">{{ isToInsert ? 'Salvar' : 'Atualizar'}}</button>
             <button class="btn btn-secondary mairgin-left-buttons" (click)="onClickBack()">Voltar</button>
         </div>
     </div>

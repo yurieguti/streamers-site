@@ -7,14 +7,27 @@ import { environment } from "src/environments/environment";
 @Injectable()
 export class StreamerService {
 
-    private endpointStreamer: string = "streamers";
+    private endpointAddress: string = `${environment.endpointStreamers}/streamers`
 
     constructor(private httpClient: HttpClient) { }
 
     public save(streamer: any): Observable<any> {
-        let endpointAddress: string = `${environment.endpointStreamers}/${this.endpointStreamer}`
-        console.log("ENDPOINT", endpointAddress)
+        return this.httpClient.post(this.endpointAddress, streamer);
+    }
+    
+    public listAllStreamers(): Observable<any> {
+        return this.httpClient.get(this.endpointAddress);
+    }
 
-        return this.httpClient.post(endpointAddress, streamer);
+    public getStreamers(id: any): Observable<any> {
+        return this.httpClient.get(`${this.endpointAddress}/${id}`);
+    }
+
+    public updateStreamers(streamer: any): Observable<any> {
+        return this.httpClient.put(this.endpointAddress, streamer);
+    }
+
+    public deleteStreamer(id: any): Observable<any> {
+        return this.httpClient.delete(`${this.endpointAddress}/${id}`);
     }
 }
